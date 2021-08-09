@@ -13,5 +13,9 @@ axios.get(url).then(response => {
   const ID = todo.id;
   const title = todo.title;
   const completed = todo.completed;
-  console.log(`ID: ${ID}, title: ${title}, completed: ${completed}`);
+  logTodo(ID, title, completed);
 })
+
+const logTodo = (id:number, title:string, completed: boolean) => {
+  console.log(`ID: ${id}, title: ${title}, completed: ${completed}`);
+}
