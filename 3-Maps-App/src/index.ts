@@ -6,8 +6,8 @@ declare var google: any;
 
 const user = new User();
 const company = new Company();
-new CustomMap('map');
+const customMap = new CustomMap('map');
 
-console.log(user);
-console.log(company);
+customMap.addUserMarker(user);
+
 
