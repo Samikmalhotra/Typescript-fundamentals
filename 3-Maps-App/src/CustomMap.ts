@@ -24,8 +24,8 @@ export class CustomMap{
   }
   
 
-  addUserMarker(mappable: Mappable | Company):void{
-    new google.maps.Marker({
+  addMarker(mappable: Mappable | Company):void{
+    const marker = new google.maps.Marker({
       map: this.googleMap,
       position: {
         lat: mappable.location.lat,
@@ -34,13 +34,11 @@ export class CustomMap{
     })
   };
 
-  // addCompanyMarker(company: Company):void{
-  //   new google.maps.Marker({
-  //     map: this.googleMap,
-  //     position: {
-  //       lat: company.location.lat,
-  //       lng: company.location.lng
-  //     }
-  //   })
-  // };
+  marker.addEventListener('click', () => {
+  const infoWindow = new google.maps.InfoWindow({
+      content: 'Hi there'
+  });
+  infoWindow.open(this.googleMap, marker);
+  }
+
 }
