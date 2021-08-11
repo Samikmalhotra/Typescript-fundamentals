@@ -4,11 +4,12 @@ import {Company} from './Company'
 declare var google: any;
 
 // Instructions to every pther class if the want to be mappable
-interface Mappable{
+export interface Mappable{
   location: {
     lat: number;
     lng: number;
   };
+  color: string;
   markerContent(): string
 }
 export class CustomMap{
